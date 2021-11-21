@@ -31,4 +31,12 @@ public class EmployeePayrollDBServiceTest {
         boolean result = employeePayrollService.checkEmployeePayrollInSyncWithDB("Pavani");
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenDataRangeWhenRetrievedShouldMatchEmployeeCount() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        List<EmployeePayrollData> employeePayrollDataList = employeePayrollService.readEmployeePayrollData(EmployeePayrollService.IOService.DB_IO);
+        List<EmployeePayrollData> employeePayrollData = employeePayrollService.retrieveEmployeesForGivenDataRange("2018-01-01", "2019-01-03");
+        Assert.assertEquals(2, employeePayrollData.size());
+    }
 }

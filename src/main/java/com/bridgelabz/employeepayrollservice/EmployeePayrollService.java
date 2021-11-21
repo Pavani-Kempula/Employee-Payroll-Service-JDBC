@@ -7,15 +7,18 @@ public class EmployeePayrollService {
     public enum IOService {
         DB_IO
     }
+
     private List<EmployeePayrollData> employeePayrollDataList;
     EmployeePayrollDBService employeePayrollDBService = new EmployeePayrollDBService();
 
     public EmployeePayrollService(List<EmployeePayrollData> employeePayrollDataList) {
         this.employeePayrollDataList = employeePayrollDataList;
     }
+
     public EmployeePayrollService() {
         this.employeePayrollDataList = new ArrayList<EmployeePayrollData>();
     }
+
     public List<EmployeePayrollData> readEmployeePayrollData(IOService ioService) {
         this.employeePayrollDataList = employeePayrollDBService.readData();
         return employeePayrollDataList;
@@ -38,5 +41,9 @@ public class EmployeePayrollService {
         EmployeePayrollData employeePayrollData = this.getEmployeePayrollData(name);
         if (employeePayrollData != null)
             employeePayrollData.BasicPay = BasicPay;
+    }
+    public List<EmployeePayrollData> retrieveEmployeesForGivenDataRange(String startDate, String endDate) {
+        List<EmployeePayrollData> employeePayrollDataList = employeePayrollDBService.retrieveEmployeePayrollDataRange(startDate, endDate);
+        return employeePayrollDataList;
     }
 }
