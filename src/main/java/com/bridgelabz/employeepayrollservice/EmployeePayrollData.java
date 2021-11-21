@@ -8,6 +8,7 @@ public class EmployeePayrollData {
     public String name;
     public double basic_Pay;
     public LocalDate start;
+    public double BasicPay;
 
     public EmployeePayrollData(int id, String name, double basic_pay, LocalDate startDate) {
         this.id = id;
