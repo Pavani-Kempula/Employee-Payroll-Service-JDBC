@@ -7,6 +7,14 @@
     <groupId>org.example</groupId>
     <artifactId>Employee-PayRoll-JDBC</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies><!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
